@@ -1,0 +1,179 @@
+.living-tree-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  height: 100%;
+  position: relative;
+  padding: 2rem;
+}
+
+.status-badge {
+  position: absolute;
+  top: 1rem;
+  left: 50%;
+  transform: translateX(-50%);
+  padding: 0.5rem 1.5rem;
+  border-radius: 20px;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-weight: 600;
+  font-size: 0.9rem;
+  z-index: 10;
+  transition: all 0.5s ease;
+}
+
+.status-dot {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background: currentColor;
+}
+
+.tree-visual {
+  position: relative;
+  width: 300px;
+  height: 300px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 2rem 0;
+}
+
+.core {
+  position: relative;
+  z-index: 5;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.core-icon {
+  position: relative;
+  z-index: 2;
+  transition: all 0.5s ease;
+}
+
+.pulse-ring {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 120px;
+  height: 120px;
+  border-radius: 50%;
+  border: 2px solid transparent;
+  animation: pulse-out 3s infinite ease-out;
+}
+
+.pulse-ring.delayed {
+  animation-delay: 1.5s;
+}
+
+.orbits {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
+
+.particle-orbit {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 100%;
+  height: 100%;
+  margin-top: -150px;
+  margin-left: -150px;
+  animation: rotate infinite linear;
+}
+
+.particle {
+  position: absolute;
+  top: 0;
+  left: 50%;
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  transform: translateX(-50%);
+  animation: float 2s infinite ease-in-out alternate;
+  box-shadow: 0 0 10px currentColor;
+}
+
+.metrics {
+  display: flex;
+  gap: 2rem;
+  padding: 1rem 2rem;
+  margin-top: auto;
+  width: 100%;
+  justify-content: space-around;
+}
+
+.metric {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.metric .label {
+  color: var(--text-secondary);
+  font-size: 0.85rem;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+.metric .value {
+  font-family: var(--font-heading);
+  font-size: 1.8rem;
+  font-weight: 700;
+  color: var(--text-primary);
+}
+
+/* State Classes */
+/* Healthy (Green) */
+.healthy .status-badge { color: var(--accent-green); border-color: rgba(0, 230, 118, 0.3); }
+.healthy .status-dot { box-shadow: 0 0 8px var(--accent-green); }
+.healthy .core-icon { color: var(--accent-green); filter: drop-shadow(0 0 15px var(--accent-green-glow)); }
+.healthy .pulse-ring { border-color: var(--accent-green-glow); }
+.healthy .particle { background: var(--accent-green); }
+
+/* Moderate (Blue) */
+.moderate .status-badge { color: #00B0FF; border-color: rgba(0, 176, 255, 0.3); }
+.moderate .status-dot { box-shadow: 0 0 8px #00B0FF; }
+.moderate .core-icon { color: #00B0FF; filter: drop-shadow(0 0 15px rgba(0, 176, 255, 0.4)); }
+.moderate .pulse-ring { border-color: rgba(0, 176, 255, 0.4); }
+.moderate .particle { background: #00B0FF; }
+
+/* Warning (Amber) */
+.warning .status-badge { color: var(--accent-amber); border-color: rgba(255, 179, 0, 0.3); }
+.warning .status-dot { box-shadow: 0 0 8px var(--accent-amber); }
+.warning .core-icon { color: var(--accent-amber); filter: drop-shadow(0 0 15px rgba(255, 179, 0, 0.4)); }
+.warning .pulse-ring { border-color: rgba(255, 179, 0, 0.4); }
+.warning .particle { background: var(--accent-amber); }
+
+/* Critical (Red) */
+.critical .status-badge { color: var(--accent-red); border-color: rgba(255, 61, 0, 0.3); animation: flash-red 1s infinite; }
+.critical .status-dot { box-shadow: 0 0 8px var(--accent-red); }
+.critical .core-icon { color: var(--accent-red); filter: drop-shadow(0 0 15px rgba(255, 61, 0, 0.4)); transform: scale(0.8) rotate(15deg); }
+.critical .pulse-ring { border-color: rgba(255, 61, 0, 0.4); animation-duration: 1s; }
+.critical .particle { background: var(--accent-red); }
+.critical .particle-orbit { animation-duration: 1s !important; }
+
+@keyframes pulse-out {
+  0% { transform: translate(-50%, -50%) scale(0.8); opacity: 1; }
+  100% { transform: translate(-50%, -50%) scale(2.5); opacity: 0; }
+}
+
+@keyframes rotate {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
+}
+
+@keyframes float {
+  0% { transform: translateX(-50%) translateY(0px); opacity: 0.5; }
+  100% { transform: translateX(-50%) translateY(20px); opacity: 1; }
+}

@@ -1,0 +1,53 @@
+# BEYOND MONITORING: MVP SPECIFICATION FILE
+# Generated for Antigravity Hackathon Submission
+
+[PROJECT_METADATA]
+ID: TECH_INN_2026
+Title: Beyond Monitoring
+Theme: Energy Conservation and Digitization
+Version: 1.0.0
+Framework_Base: Google Stitch / React
+
+[CORE_PIPELINE]
+P01: MONITOR -> Smart Meter Simulation (Slider Input)
+P02: ANALYZE -> Real-time Departmental Load Calculation
+P03: ALERT   -> Visual Thresholds (50% Blue, 75% Amber, 100% Red)
+P04: AUTOMATE-> PIR Sensor Simulation (Auto-OFF Logic)
+P05: ENGAGE  -> Living Tree Visuals & Gamified Rewards
+
+[UI_UX_THEME]
+Primary_Background: #0B0E14 (Midnight Blue)
+Accent_Green: #00E676 (Sustainability Neon)
+Heading_Font: Montserrat Bold
+Body_Font: Inter Regular
+Visual_Style: Glassmorphism / Futuristic SaaS
+
+[PAGE_ROUTING]
+PAGE_01: /login -> Futuristic Split-Screen Gateway
+PAGE_02: /onboarding -> Department Joiner & Referral Verification
+PAGE_03: /dashboard -> Central "Living Tree" Hub & Device Control
+PAGE_04: /leaderboard -> Departmental Competition & Streaks
+PAGE_05: /rewards -> Employee Activity Heatmap & Marketplace
+
+[SIMULATION_CONTROLLER_LOGIC]
+# Logic for demo without physical hardware
+INPUT_SOURCE: UI_OVERLAY_SLIDER
+EVENT_TRIGGER_75: 
+  - ACTION: Toast_Notification("Approaching Limit")
+  - UI_STATE: Pulsing_Amber
+EVENT_TRIGGER_100:
+  - ACTION: Auto_Shutdown_Non_Essential()
+  - UI_STATE: Red_Flash_Alert
+  - TREE_STATE: Wilted_Silhoutte
+SENSOR_SIMULATION:
+  - TYPE: PIR_Occupancy
+  - ACTION_ON_EMPTY: Dim_Lights_70% + AC_Eco_Mode
+
+[GAMIFICATION_METRICS]
+POINTS_UNIT: Eco-Points
+REWARD_1: 100_PTS -> Corporate_Coffee_Voucher
+REWARD_2: 1000_PTS -> Early_Logout_Pass
+REWARD_3: 2000_PTS -> Prime_Parking_Privilege
+
+[VISION_STATEMENT]
+"People do not change behavior just by seeing data. They change behavior when the system is simple, engaging, automated, competitive, and rewarding."

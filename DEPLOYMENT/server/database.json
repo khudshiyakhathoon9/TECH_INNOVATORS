@@ -1,0 +1,40 @@
+{
+  "stats": [
+    { "id": 1, "title": "Total Users", "value": "1", "trend": "New", "icon": "Users", "color": "var(--text-primary)" },
+    { "id": 2, "title": "Active Sessions", "value": "1", "trend": "Active", "icon": "Activity", "color": "var(--accent-green)" },
+    { "id": 3, "title": "System Alerts", "value": "0", "trend": "Healthy", "icon": "AlertTriangle", "color": "var(--accent-amber)" },
+    { "id": 4, "title": "System Health", "value": "100%", "trend": "Stable", "icon": "CheckCircle", "color": "var(--text-secondary)" }
+  ],
+  "users": [
+    { 
+      "id": 1, 
+      "name": "System Administrator", 
+      "email": "admin@beyond.com", 
+      "password": "$2b$10$xTPQtlFojqnI8as/sZOW4OWaWsAtZ1sk97DClZfQPTOtrLb0AZXkm", 
+      "role": "Admin", 
+      "department": "IT Operations", 
+      "status": "Active" 
+    }
+  ],
+  "activity": [],
+  "settings": {
+    "appName": "Beyond Monitoring",
+    "maintenanceMode": false,
+    "alertThresholdAmber": 75,
+    "alertThresholdRed": 100,
+    "maxAutoShutdowns": 3
+  },
+  "energyLoad": {
+    "current": 45,
+    "history": [45],
+    "ecoScore": 75,
+    "dailyUsage": "0 kWh",
+    "weeklyComparison": "0%",
+    "activeRules": 0
+  },
+  "departments": [
+    { "id": 1, "name": "IT Operations", "score": 0, "streak": 0, "rank": 1, "change": "same" }
+  ],
+  "rewards": [],
+  "userPoints": 0
+}
